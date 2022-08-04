@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  
+  roles:
+    - create_remove_files
+    - restart_nginx 
+
+
+  
