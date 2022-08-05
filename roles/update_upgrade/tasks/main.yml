@@ -1,0 +1,9 @@
+---
+## Update & Upgrade Host
+- name: update-host
+  apt: 
+    update_cache: yes
+
+- name: upgrade-host
+  apt: 
+    upgrade: dist 

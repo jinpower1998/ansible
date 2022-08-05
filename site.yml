@@ -3,6 +3,8 @@
   become: true
   
   roles:
+    - update_upgrade
+    - install_remove_nginx
     - create_remove_files
     - restart_nginx 
 
