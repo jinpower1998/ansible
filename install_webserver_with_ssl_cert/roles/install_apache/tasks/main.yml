@@ -1,0 +1,26 @@
+---
+# installs apache-webserver
+
+#debian-base-systems (ubuntu)
+- name: install_apache2_debian
+  apt: 
+    name: apache2
+    state: present 
+  when: ansible_facts['os_family'] == "Debian" 
+
+#rpm-based systems (rhel/centos)
+- name: install_apache2_rpm
+  ansible.builtin.yum:
+    name: httpd
+    state: present
+  when: 
+    ( ansible_facts['os_family'] == "RedHat") or
+    ( ansible_facts['os_family'] == "CentOS")
+
+#suse-based systems 
+- name: install_apache2_suse
+  community.general.zypper:
+    name: httpd 
+    state: present 
+  when: ansible_facts['os_family'] == "SLES" 
+
