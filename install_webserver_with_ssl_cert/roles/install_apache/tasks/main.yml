@@ -18,9 +18,9 @@
     ( ansible_facts['os_family'] == "CentOS")
 
 #suse-based systems 
-- name: install_apache2_suse
-  community.general.zypper:
-    name: httpd 
-    state: present 
-  when: ansible_facts['os_family'] == "SLES" 
+#- name: install_apache2_suse
+#  community.general.zypper:
+#    name: httpd 
+#    state: present 
+#  when: ansible_facts['os_family'] == "SLES" 
 

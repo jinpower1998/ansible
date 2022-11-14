@@ -7,7 +7,7 @@
 
   roles:
     - install_apache
-
+    - start_http
   
 
 

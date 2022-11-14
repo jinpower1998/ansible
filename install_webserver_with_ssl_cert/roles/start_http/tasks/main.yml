@@ -2,7 +2,19 @@
 # starts http-server
 
 #debian 
-- name: start_http
+- name: start_http_debian
   ansible.builtin.service:
       name: apache2
       state: started
+  when: ansible_facts['os_family'] == "Debian" 
+
+- name: start_http_rhel/centos
+  ansible.builtin.service:
+    name: httpd
+    state: started
+  when: 
+    ( ansible_facts['os_family'] == "RedHat") or
+    ( ansible_facts['os_family'] == "CentOS")
+
+
+#rhel/centos
